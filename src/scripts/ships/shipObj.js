@@ -1,9 +1,11 @@
 export function shipObj(length) {
+  let length = length;
+  let hits = 0;
+  isSunk = false;
   return {
-    length,
-    hits: 0,
-    isSunk: false,
     hit() {},
-    isSunk() {},
+    isSunk() {
+      return hits >= length;
+    },
   };
 }
