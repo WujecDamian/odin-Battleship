@@ -1,4 +1,9 @@
 export function gameBoard() {
+  function renderBoard() {
+    for (let i = 0; i < this.board.length; i++) {
+      console.log(`[${this.board[i]}]`);
+    }
+  }
   return {
     board: new Array(10).fill("[],[],[],[],[],[],[],[],[],[]", 0, -1),
     missed: 0,
