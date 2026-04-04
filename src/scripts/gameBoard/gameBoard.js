@@ -5,12 +5,12 @@ export function gameBoard() {
       .map(() => Array(10).fill("")),
     missed: 0,
     totalHits: 0,
-    receiveAttack(x, y) {
+    receiveAttack(y, x) {
       //Determine whether attack hit a ship
-      if (this.board[x][y] === "o") {
+      if (this.board[y][x] === "o") {
         // t: => call hit function on correct ship [o]
       } else {
-        this.board[x][y] = "x";
+        this.board[y][x] = "x";
       }
     },
     placeShip(ship, x, y) {},
