@@ -27,10 +27,10 @@ describe("Gameboard tests", () => {
 
   test("Places 'o' marks when placing ship on right spot", () => {
     gBoard.placeShip(gBoard.ships[0], "horizontal", 3, 0);
-    expect(gBoard.board[3][0]).toEqual("o");
-    expect(gBoard.board[3][1]).toEqual("o");
-    expect(gBoard.board[3][2]).toEqual("o");
-    expect(gBoard.board[3][3]).toEqual("o");
-    expect(gBoard.board[3][4]).toEqual("o");
+    expect(gBoard.board[3][0][0][0]).toEqual("o");
+    expect(gBoard.board[3][1][0][0]).toEqual("o");
+    expect(gBoard.board[3][2][0][0]).toEqual("o");
+    expect(gBoard.board[3][3][0][0]).toEqual("o");
+    expect(gBoard.board[3][4][0][0]).toEqual("o");
   });
 });
