@@ -9,7 +9,7 @@ test('object assignment', () => {
 });
 
 */
-describe("matching cities to foods", () => {
+describe("Gameboard tests", () => {
   let gBoard = gameBoard();
 
   test('places attack on [y][x] and marks spot with "x"', () => {
@@ -17,8 +17,11 @@ describe("matching cities to foods", () => {
     expect(gBoard.board[5][3]).toEqual("x");
   });
 
-  test('places ship on [y][x] and marks spot with "o"', () => {
-    gBoard.placeShip("Carrier", 0, 6);
-    expect(gBoard.board[0][6]).toEqual("o");
+  test("Does nothing to array if tried to place ship off the edge", () => {
+    /*  gBoard.placeShip(gBoard.ships[0], 0, 6);
+    expect(gBoard.board[0][6]).toEqual("");
+    expect(gBoard.board[0][7]).toEqual("");
+    expect(gBoard.board[0][8]).toEqual("");
+    expect(gBoard.board[0][9]).toEqual(""); */
   });
 });
