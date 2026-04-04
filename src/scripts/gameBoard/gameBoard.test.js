@@ -18,10 +18,19 @@ describe("Gameboard tests", () => {
   });
 
   test("Does nothing to array if tried to place ship off the edge", () => {
-    gBoard.placeShip(gBoard.ships[0], 0, 6);
+    gBoard.placeShip(gBoard.ships[0], "horizontal", 0, 6);
     expect(gBoard.board[0][6]).toEqual("");
     expect(gBoard.board[0][7]).toEqual("");
     expect(gBoard.board[0][8]).toEqual("");
     expect(gBoard.board[0][9]).toEqual("");
+  });
+
+  test("Places 'o' marks when placing ship on right spot", () => {
+    gBoard.placeShip(gBoard.ships[0], "horizontal", 3, 0);
+    expect(gBoard.board[3][0]).toEqual("o");
+    expect(gBoard.board[3][1]).toEqual("o");
+    expect(gBoard.board[3][2]).toEqual("o");
+    expect(gBoard.board[3][3]).toEqual("o");
+    expect(gBoard.board[3][4]).toEqual("o");
   });
 });
