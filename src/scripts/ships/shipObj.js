@@ -1,8 +1,8 @@
 export function shipObj(name, length) {
-  name = name;
   let hits = 0;
   isSunk = false;
   return {
+    name,
     lengthShip: length,
     hit() {},
     isSunk() {
