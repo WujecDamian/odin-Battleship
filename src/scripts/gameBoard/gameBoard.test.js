@@ -9,3 +9,8 @@ test('object assignment', () => {
 });
 
 */
+test('places attack on [x][y] and marks spot with "x"', () => {
+  let gBoard = gameBoard();
+  gBoard.receiveAttack(5, 3);
+  expect(gBoard.board[5][3]).toEqual("x");
+});
