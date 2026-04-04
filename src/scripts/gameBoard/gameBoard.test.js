@@ -27,10 +27,19 @@ describe("Gameboard tests", () => {
 
   test("Places 'o' marks when placing ship on right spot", () => {
     gBoard.placeShip(gBoard.ships[0], "horizontal", 3, 0);
-    expect(gBoard.board[3][0][0][0]).toEqual("o");
-    expect(gBoard.board[3][1][0][0]).toEqual("o");
-    expect(gBoard.board[3][2][0][0]).toEqual("o");
-    expect(gBoard.board[3][3][0][0]).toEqual("o");
-    expect(gBoard.board[3][4][0][0]).toEqual("o");
+    expect(gBoard.board[3][0][0]).toEqual("o");
+    expect(gBoard.board[3][1][0]).toEqual("o");
+    expect(gBoard.board[3][2][0]).toEqual("o");
+    expect(gBoard.board[3][3][0]).toEqual("o");
+    expect(gBoard.board[3][4][0]).toEqual("o");
+  });
+  test("Places 'o' marks when placing ship on right spot (vertically)", () => {
+    gBoard.placeShip(gBoard.ships[4], "vertical", 3, 0);
+    expect(gBoard.board[3][0][0]).toEqual("o");
+    expect(gBoard.board[2][0][0]).toEqual("o");
+  });
+  test.skip("Being able to specify which ship is hit (ship.name)", () => {
+    gBoard.placeShip(gBoard.ships[4], "vertical", 9, 6);
+    expect(gBoard.board[9][6][0]).toEqual(gBoard.ships[4]);
   });
 });
