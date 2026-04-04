@@ -18,10 +18,10 @@ describe("Gameboard tests", () => {
   });
 
   test("Does nothing to array if tried to place ship off the edge", () => {
-    /*  gBoard.placeShip(gBoard.ships[0], 0, 6);
+    gBoard.placeShip(gBoard.ships[0], 0, 6);
     expect(gBoard.board[0][6]).toEqual("");
     expect(gBoard.board[0][7]).toEqual("");
     expect(gBoard.board[0][8]).toEqual("");
-    expect(gBoard.board[0][9]).toEqual(""); */
+    expect(gBoard.board[0][9]).toEqual("");
   });
 });
