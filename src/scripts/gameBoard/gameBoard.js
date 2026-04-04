@@ -24,25 +24,22 @@ export function gameBoard() {
     },
     placeShip(ship, orientation, y, x) {
       let length = 0;
-      switch (String.toLowerCase(ship)) {
-        case "carrier":
-          length = 5;
-          break;
-        case "battleship":
-          length = 4;
-          break;
-        case "cruiser":
-        case "submarine":
-          length = 3;
-          break;
-        case "destroyer":
-          length = 2;
-          break;
-        default:
-          alert("Ship is invalid! There's nothing like - " + ship);
-      }
+      let maxX = 9;
+      let minY = 9;
       if (orientation === "horizontal") {
+        maxX = 10 - ship.lengthShip;
+        if (x <= maxX) {
+          for (let i = 0; i < ship.lengthShip; i++) {
+            this.board[y][x + i] = "o";
+          }
+        } else return "Tried to place off the edge";
       } else if (orientation === "vertical") {
+        minY = ship.lengthShip - 1;
+        if (y <= minY) {
+          for (let i = 0; i < ship.lengthShip; i++) {
+            this.board[y - i][x] = "o";
+          }
+        } else return "Tried to place off the edge";
       }
     },
     renderBoard() {
