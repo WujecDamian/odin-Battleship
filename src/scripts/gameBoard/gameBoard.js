@@ -5,12 +5,15 @@ export function gameBoard() {
       .map(() => Array(10).fill("")),
     missed: 0,
     totalHits: 0,
-    receiveAttack(coordinates) {
+    receiveAttack(x, y) {
       //Determine whether attack hit a ship
-      // t: => call hit function on correct ship [o]
-      // f: => mark spot as missed [x]
+      if (this.board[x][y] === "o") {
+        // t: => call hit function on correct ship [o]
+      } else {
+        this.board[x][y] = "x";
+      }
     },
-    placeShip(ship, coordinates) {},
+    placeShip(ship, x, y) {},
     renderBoard() {
       for (let i = 0; i < this.board.length; i++) {
         let arrayString = "";
