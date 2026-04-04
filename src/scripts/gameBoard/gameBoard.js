@@ -1,11 +1,8 @@
 export function gameBoard() {
-  function renderBoard() {
-    for (let i = 0; i < this.board.length; i++) {
-      console.log(`[${this.board[i]}]`);
-    }
-  }
   return {
-    board: new Array(10).fill("[],[],[],[],[],[],[],[],[],[]", 0, -1),
+    board: Array(10)
+      .fill()
+      .map(() => Array(10).fill("")),
     missed: 0,
     totalHits: 0,
     receiveAttack(coordinates) {
@@ -14,5 +11,14 @@ export function gameBoard() {
       // f: => mark spot as missed [x]
     },
     placeShip(ship, coordinates) {},
+    renderBoard() {
+      for (let i = 0; i < this.board.length; i++) {
+        let arrayString = "";
+        for (let j = 0; j < this.board[i].length; j++) {
+          arrayString += `[${this.board[i][j]} ]`;
+        }
+        console.log(`${i} | ${arrayString}`);
+      }
+    },
   };
 }
