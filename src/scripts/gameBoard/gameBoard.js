@@ -30,14 +30,14 @@ export function gameBoard() {
         maxX = 10 - ship.lengthShip;
         if (x <= maxX) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            this.board[y][x + i] = ["o"][ship]; //! this can't be just 'o' it has to be actual ship
+            this.board[y][x + i] = [["o"], [ship]]; //! this can't be just 'o' it has to be actual ship
           }
         } else return "Tried to place off the edge";
       } else if (orientation === "vertical") {
         minY = ship.lengthShip - 1;
         if (y <= minY) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            this.board[y - i][x] = ["o"][ship]; //! this can't be just 'o' it has to be actual ship
+            this.board[y - i][x] = [["o"], [ship]]; //! this can't be just 'o' it has to be actual ship
             //? this can be array with ["o"] <- to check if later if receiveAttack is "o" and [ship] <- to send hit() to this ship and later show e.g ship name
           }
         } else return "Tried to place off the edge";
