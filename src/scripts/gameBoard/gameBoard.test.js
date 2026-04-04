@@ -38,8 +38,8 @@ describe("Gameboard tests", () => {
     expect(gBoard.board[3][0][0]).toEqual("o");
     expect(gBoard.board[2][0][0]).toEqual("o");
   });
-  test.skip("Being able to specify which ship is hit (ship.name)", () => {
+  test("Being able to specify which ship is hit (ship.name)", () => {
     gBoard.placeShip(gBoard.ships[4], "vertical", 9, 6);
-    expect(gBoard.board[9][6][0]).toEqual(gBoard.ships[4]);
+    expect(gBoard.board[9][6][1]).toEqual(gBoard.ships[4]);
   });
 });
