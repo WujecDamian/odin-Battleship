@@ -1,11 +1,13 @@
-export function shipObj(length) {
+export function shipObj(name, length) {
+  let name = name;
   let length = length;
   let hits = 0;
   isSunk = false;
   return {
     hit() {},
     isSunk() {
-      return hits >= length;
+      this.isSunk = hits >= length;
+      return this.isSunk;
     },
   };
 }
