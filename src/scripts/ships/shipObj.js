@@ -11,5 +11,8 @@ export function shipObj(name, length) {
       this.isSunk = hits >= lengthShip;
       return this.isSunk;
     },
+    getHits() {
+      return this.hits;
+    },
   };
 }
