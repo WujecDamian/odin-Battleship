@@ -49,4 +49,11 @@ describe("Gameboard tests", () => {
     let ship = gBoard.board[9][6][1];
     expect(ship.getHits()).toEqual(1);
   });
+  test("Ship isSunk function return true after hits count === length", () => {
+    gBoard.placeShip(gBoard.ships[4], "vertical", 9, 6);
+    gBoard.receiveAttack(9, 6);
+    gBoard.receiveAttack(8, 6);
+    let ship = gBoard.board[9][6][1];
+    expect(ship.isSunk()).toEqual(true);
+  });
 });
