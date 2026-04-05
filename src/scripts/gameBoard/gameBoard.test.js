@@ -14,7 +14,7 @@ describe("Gameboard tests", () => {
 
   test('places attack on [y][x] and marks spot with "x"', () => {
     gBoard.receiveAttack(5, 3);
-    expect(gBoard.board[5][3]).toEqual("x");
+    expect(gBoard.board[5][3][0]).toEqual("x");
   });
 
   test("Does nothing to array if tried to place ship off the edge", () => {
@@ -41,5 +41,12 @@ describe("Gameboard tests", () => {
   test("Being able to specify which ship is hit (ship.name)", () => {
     gBoard.placeShip(gBoard.ships[4], "vertical", 9, 6);
     expect(gBoard.board[9][6][1]).toEqual(gBoard.ships[4]);
+  });
+  /* !----------------------RECEIVE ATTACK-----------------------! */
+  test("Ship receives attack and it's hits count increase", () => {
+    gBoard.placeShip(gBoard.ships[4], "vertical", 9, 6);
+    gBoard.receiveAttack(9, 6);
+    let ship = gBoard.board[9][6][1];
+    expect(ship.getHits()).toEqual(1);
   });
 });
