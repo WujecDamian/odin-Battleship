@@ -18,6 +18,8 @@ export function gameBoard() {
       //Determine whether attack hit a ship
       if (this.board[y][x][0] === "o") {
         // t: => call hit function on correct ship [o]
+        let ship = this.board[y][x][1];
+        ship.hit();
       } else {
         this.board[y][x] = new Array("x");
       }
