@@ -19,7 +19,7 @@ export function gameBoard() {
       if (this.board[y][x][0] === "o") {
         // t: => call hit function on correct ship [o]
       } else {
-        this.board[y][x] = new Array("o");
+        this.board[y][x] = new Array("x");
       }
     },
     placeShip(ship, orientation, y, x) {
