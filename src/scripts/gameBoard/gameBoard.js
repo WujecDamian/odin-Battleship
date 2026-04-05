@@ -20,6 +20,9 @@ export function gameBoard() {
         // t: => call hit function on correct ship [o]
         let ship = this.board[y][x][1];
         ship.hit();
+        if (ship.getHits() === 17) {
+          //! All of the ships have been sunk
+        }
       } else {
         this.board[y][x] = new Array("x");
         this.missed++;
