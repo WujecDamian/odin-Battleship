@@ -5,14 +5,14 @@ export function shipObj(name, length) {
     name,
     lengthShip: length,
     hit() {
-      this.hits++;
+      hits++;
     },
     isSunk() {
       this.isSunk = hits >= lengthShip;
       return this.isSunk;
     },
     getHits() {
-      return this.hits;
+      return hits;
     },
   };
 }
