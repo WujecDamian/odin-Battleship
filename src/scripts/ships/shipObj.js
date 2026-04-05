@@ -4,7 +4,9 @@ export function shipObj(name, length) {
   return {
     name,
     lengthShip: length,
-    hit() {},
+    hit() {
+      this.hits++;
+    },
     isSunk() {
       this.isSunk = hits >= lengthShip;
       return this.isSunk;
