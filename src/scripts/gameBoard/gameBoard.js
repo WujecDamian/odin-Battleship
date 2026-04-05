@@ -22,6 +22,7 @@ export function gameBoard() {
         ship.hit();
       } else {
         this.board[y][x] = new Array("x");
+        this.missed++;
       }
     },
     placeShip(ship, orientation, y, x) {
