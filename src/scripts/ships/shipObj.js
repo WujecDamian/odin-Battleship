@@ -8,7 +8,7 @@ export function shipObj(name, length) {
       hits++;
     },
     isSunk() {
-      this.isSunk = hits >= lengthShip;
+      this.isSunk = hits >= this.lengthShip;
       return this.isSunk;
     },
     getHits() {
