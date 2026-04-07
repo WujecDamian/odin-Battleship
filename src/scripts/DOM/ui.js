@@ -20,9 +20,11 @@ newGameBtn.addEventListener("click", () => {
   board1.addEventListener("click", (event) => {
     const target = event.target;
     if (target.className === "square") {
-      console.log(`board 1: ${target.id}`);
       if (target.innerHTML !== "o" && target.innerHTML !== "x") {
-        /*  player2.playerBoard.receiveAttack();*/
+        console.log(`board 1: ${target.id}`);
+
+        let id = target.id.split(",");
+        player1.playerBoard.receiveAttack(id[0], id[1]);
         target.innerHTML = "x";
       }
     }
@@ -30,9 +32,11 @@ newGameBtn.addEventListener("click", () => {
   board2.addEventListener("click", (event) => {
     const target = event.target;
     if (target.className === "square") {
-      console.log(`board 2: ${target.id}`);
       if (target.innerHTML !== "o" && target.innerHTML !== "x") {
-        /*  player2.playerBoard.receiveAttack();*/
+        console.log(`board 2: ${target.id}`);
+
+        let id = target.id.split(",");
+        player2.playerBoard.receiveAttack(id[0], id[1]);
         target.innerHTML = "x";
       }
     }
