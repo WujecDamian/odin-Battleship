@@ -1,6 +1,6 @@
 export function renderBoard(board, boardClass) {
-  console.log("hejka");
   let boardDiv = document.querySelector(`.${boardClass}`);
+  boardDiv.replaceChildren();
   board.forEach((element) => {
     element.forEach((field) => {
       let square = document.createElement("div");
