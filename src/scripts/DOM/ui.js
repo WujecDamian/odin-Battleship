@@ -16,4 +16,25 @@ newGameBtn.addEventListener("click", () => {
   let player2board = player2.playerBoard.board;
   renderBoard(player1board, "board1");
   renderBoard(player2board, "board2");
+
+  board1.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.className === "square") {
+      console.log(`board 1: ${target.id}`);
+      if (target.innerHTML !== "o" && target.innerHTML !== "x") {
+        /*  player2.playerBoard.receiveAttack();*/
+        target.innerHTML = "x";
+      }
+    }
+  });
+  board2.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.className === "square") {
+      console.log(`board 2: ${target.id}`);
+      if (target.innerHTML !== "o" && target.innerHTML !== "x") {
+        /*  player2.playerBoard.receiveAttack();*/
+        target.innerHTML = "x";
+      }
+    }
+  });
 });
