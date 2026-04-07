@@ -59,6 +59,9 @@ describe("Gameboard tests", () => {
   test("Ship is one object and hit increases on all 5 points (NOT 1point = 1ship", () => {
     gBoard.placeShip(gBoard.ships[2], "horizontal", 5, 2);
     gBoard.receiveAttack(5, 2);
+    gBoard.receiveAttack(5, 3);
+    gBoard.receiveAttack(5, 4);
+
     let ship1 = gBoard.board[5][2][1];
     let ship2 = gBoard.board[5][3][1];
     let ship3 = gBoard.board[5][4][1];
