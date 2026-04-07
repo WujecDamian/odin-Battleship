@@ -1,6 +1,6 @@
 export function shipObj(name, length) {
   let hits = 0;
-  isSunk = false;
+  let isSunk = false;
   return {
     name,
     lengthShip: length,
