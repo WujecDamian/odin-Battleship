@@ -48,14 +48,5 @@ export function gameBoard() {
         } else return "Tried to place off the edge";
       }
     },
-    renderBoard() {
-      for (let i = 0; i < this.board.length; i++) {
-        let arrayString = "";
-        for (let j = 0; j < this.board[i].length; j++) {
-          arrayString += `[${this.board[i][j]} ]`;
-        }
-        console.log(`${i} | ${arrayString}`);
-      }
-    },
   };
 }
