@@ -1,8 +1,11 @@
 export function renderBoard(board, boardClass) {
-  let board = document.querySelector(`.${boardClass}`);
+  console.log("hejka");
+  let boardDiv = document.querySelector(`.${boardClass}`);
   board.forEach((element) => {
-    let square = document.createElement("div");
-    square.className = "square";
-    board.append(square);
+    element.forEach((field) => {
+      let square = document.createElement("div");
+      square.className = "square";
+      boardDiv.append(square);
+    });
   });
 }
