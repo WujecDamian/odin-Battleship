@@ -39,11 +39,30 @@ main {
   display: grid;
   place-content: center;
   .main__info {
-    display: flex;
+    display: grid;
+    grid-template: 1fr/ 1fr 1fr 1fr;
     justify-content: space-between;
     padding: 0.5rem 5rem;
     background-color: rgba(34, 34, 34, 0.9);
     color: whitesmoke;
+    .info__turn {
+      text-align: center;
+    }
+    .info__mode {
+      text-align: right;
+    }
+  }
+  .main__info2 {
+    display: grid;
+    grid-template: 1fr/ 1fr;
+    width: 100%;
+    padding: 0.5rem 5rem;
+    background-color: rgba(34, 34, 34, 0.9);
+    color: whitesmoke;
+    .info2__turn {
+      text-align: center;
+      font-style: italic;
+    }
   }
   .game {
     display: grid;
@@ -59,6 +78,7 @@ main {
     }
     .game__board1,
     .game__board2 {
+      padding: 1rem;
       .board1,
       .board2 {
         display: grid;
