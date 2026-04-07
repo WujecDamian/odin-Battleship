@@ -1,4 +1,4 @@
-import { shipObj } from "../ships/shipObj";
+import { shipObj } from "../ships/shipObj.js";
 
 export function gameBoard() {
   return {
