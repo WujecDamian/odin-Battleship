@@ -14,7 +14,7 @@ newGameBtn.addEventListener("click", () => {
 
   let player1board = player1.playerBoard.board;
   let player2board = player2.playerBoard.board;
-  player2.placeShips();
+  player2.placeShips(player2.playerBoard.ships);
 
   renderBoard(player1board, "board1");
   renderBoard(player2board, "board2");
