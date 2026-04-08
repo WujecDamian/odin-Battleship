@@ -35,21 +35,37 @@ export function gameBoard() {
       let length = 0;
       let maxX = 9;
       let minY = 9;
+      let isClear = true;
       if (orientation === "horizontal") {
         maxX = 10 - ship.lengthShip;
         if (x <= maxX) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            this.board[y][x + i] = new Array("o", ship);
+            if (this.board[y][x + i] !== "") {
+              isClear = false;
+            }
           }
-        } else return "Tried to place off the edge";
+          if (isClear) {
+            for (let i = 0; i < ship.lengthShip; i++) {
+              this.board[y][x + i] = new Array("o", ship);
+            }
+          }
+        }
       } else if (orientation === "vertical") {
         minY = ship.lengthShip - 1;
         if (y >= minY) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            this.board[y - i][x] = new Array("o", ship);
+            if (this.board[y - 1][x] !== "") {
+              isClear = false;
+            }
           }
-        } else return "Tried to place off the edge";
+          if (isClear) {
+            for (let i = 0; i < ship.lengthShip; i++) {
+              this.board[y - i][x] = new Array("o", ship);
+            }
+          }
+        }
       }
+      return isClear;
     },
   };
 }
