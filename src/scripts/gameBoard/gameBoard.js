@@ -15,6 +15,7 @@ export function gameBoard() {
     missed: 0,
     totalHits: 0,
     receiveAttack(y, x) {
+      let hasHit = false;
       //Determine whether attack hit a ship
       if (this.board[y][x][0] === "o") {
         // t: => call hit function on correct ship [o]
@@ -23,10 +24,12 @@ export function gameBoard() {
         if (ship.getHits() === 17) {
           //! All of the ships have been sunk
         }
+        hasHit = true;
       } else {
         this.board[y][x] = new Array("x");
         this.missed++;
       }
+      return hasHit;
     },
     placeShip(ship, orientation, y, x) {
       let length = 0;
