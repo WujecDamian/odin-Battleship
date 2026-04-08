@@ -14,6 +14,8 @@ newGameBtn.addEventListener("click", () => {
 
   let player1board = player1.playerBoard.board;
   let player2board = player2.playerBoard.board;
+  player2.placeShips();
+
   renderBoard(player1board, "board1");
   renderBoard(player2board, "board2");
 
@@ -24,8 +26,16 @@ newGameBtn.addEventListener("click", () => {
         console.log(`board 1: ${target.id}`);
 
         let id = target.id.split(",");
+        console.log(`${id[0]} | ${id[1]}`);
+
         player1.playerBoard.receiveAttack(id[0], id[1]);
-        target.innerHTML = "x";
+
+        let attack = player1.playerBoard.receiveAttack(id[0], id[1]);
+        if (attack === true) {
+          target.innerHTML = "o";
+        } else {
+          target.innerHTML = "x";
+        }
       }
     }
   });
@@ -36,8 +46,12 @@ newGameBtn.addEventListener("click", () => {
         console.log(`board 2: ${target.id}`);
 
         let id = target.id.split(",");
-        player2.playerBoard.receiveAttack(id[0], id[1]);
-        target.innerHTML = "x";
+        let attack = player2.playerBoard.receiveAttack(id[0], id[1]);
+        if (attack === true) {
+          target.innerHTML = "o";
+        } else {
+          target.innerHTML = "x";
+        }
       }
     }
   });
