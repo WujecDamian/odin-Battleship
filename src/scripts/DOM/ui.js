@@ -3,21 +3,23 @@ import { realPlayer } from "../player/realPlayer.js";
 import { aiPlayer } from "../player/aiPlayer.js";
 import { renderBoard } from "./renderBoard.js";
 
-let newGameBtn = document.querySelector(".newgame__btn");
+let newGameBtn1 = document.querySelector(".newgame__btn1");
+let newGameBtn2 = document.querySelector(".newgame__btn2");
 
-newGameBtn.addEventListener("click", () => {
+let reloadGameBtn = document.querySelector(".reloadgame__btn");
+
+reloadGameBtn.addEventListener("click", () => {
+  window.location.reload();
+});
+newGameBtn1.addEventListener("click", () => {
   let player1 = realPlayer();
-  let player2 = aiPlayer();
 
   let board1 = document.querySelector(".board1");
-  let board2 = document.querySelector(".board2");
 
   let player1board = player1.playerBoard.board;
-  let player2board = player2.playerBoard.board;
-  player2.placeShips(player2.playerBoard.ships);
+  player1.placeShips(player1.playerBoard.ships);
 
   renderBoard(player1board, "board1");
-  renderBoard(player2board, "board2");
 
   board1.addEventListener("click", (event) => {
     const target = event.target;
@@ -39,6 +41,17 @@ newGameBtn.addEventListener("click", () => {
       }
     }
   });
+});
+newGameBtn2.addEventListener("click", () => {
+  let player2 = aiPlayer();
+
+  let board2 = document.querySelector(".board2");
+
+  let player2board = player2.playerBoard.board;
+  player2.placeShips(player2.playerBoard.ships);
+
+  renderBoard(player2board, "board2");
+
   board2.addEventListener("click", (event) => {
     const target = event.target;
     if (target.className === "square") {
