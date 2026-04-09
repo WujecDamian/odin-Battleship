@@ -51,7 +51,7 @@ main {
     display: grid;
     grid-template: 1fr /1fr 1fr;
     gap: 0.25rem;
-    max-width: 300px;
+    max-width: 250px;
   }
   .main__info {
     display: grid;
