@@ -28,7 +28,6 @@ newGameBtn1.addEventListener("click", () => {
         console.log(`board 1: ${target.id}`);
 
         let id = target.id.split(",");
-        console.log(`${id[0]} | ${id[1]}`);
 
         player1.playerBoard.receiveAttack(id[0], id[1]);
 
@@ -38,6 +37,24 @@ newGameBtn1.addEventListener("click", () => {
         } else {
           target.innerHTML = "x";
         }
+      }
+    }
+  });
+  let fieldsWithShips = player1.playerBoard.fieldsWithShips;
+  let squares = document.querySelectorAll(".board1 > .square");
+  let squaresArr = Array.from(squares);
+  console.log(`${JSON.stringify(squares[0].id)}`);
+  console.log(`${JSON.stringify(squaresArr)}`);
+  console.log(`${fieldsWithShips[0][0]}`);
+
+  fieldsWithShips.forEach((field) => {
+    for (let i = 0; i < 10; i++) {
+      /* console.log(`square[index].id ${squares[i].id}`); */
+
+      if (squares[i].id === field) {
+        console.log("matches");
+
+        squares[i].innerHTML = "o";
       }
     }
   });
