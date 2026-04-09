@@ -29,8 +29,9 @@ export function aiPlayer() {
               ship,
               pickedOrientation,
               Math.floor(
-                Math.floor(Math.random() * 9 - ship.lengthShip) +
-                  ship.lengthShip,
+                Math.floor(Math.random() * ship.lengthShip) +
+                  ship.lengthShip -
+                  1,
               ),
               Math.floor(Math.floor(Math.random() * 9)),
             );
