@@ -2,6 +2,7 @@ import { gameBoard } from "../gameBoard/gameBoard.js";
 
 export function realPlayer() {
   return {
+    playerName: "p1",
     playerBoard: gameBoard(),
     placeShips(ships) {
       ships.forEach((ship) => {

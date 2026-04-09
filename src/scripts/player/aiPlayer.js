@@ -2,6 +2,7 @@ import { gameBoard } from "../gameBoard/gameBoard.js";
 
 export function aiPlayer() {
   return {
+    playerName: "p2",
     playerBoard: gameBoard(),
     makeMove() {},
     placeShips(ships) {
