@@ -12,6 +12,7 @@ export function gameBoard() {
       shipObj("submarine", 3),
       shipObj("destroyer", 2),
     ),
+    fieldsWithShips: [],
     missed: 0,
     totalHits: 0,
     receiveAttack(y, x) {
@@ -65,7 +66,18 @@ export function gameBoard() {
           }
         }
       }
+      this.showHumanPlayerShips();
       return isClear;
+    },
+    showHumanPlayerShips() {
+      let board = this.board;
+      for (let y = 0; y < 9; y++) {
+        for (let x = 0; x < 9; x++) {
+          if (board[y][x] != "") {
+            this.fieldsWithShips.push(`${y},${x}`);
+          }
+        }
+      }
     },
   };
 }
