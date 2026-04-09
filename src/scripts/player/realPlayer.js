@@ -15,8 +15,6 @@ export function realPlayer() {
 
         if (pickedOrientation === "horizontal") {
           while (hasPlaced === false) {
-            console.log(`realPlayer->Hasplaced = ${hasPlaced}`);
-
             hasPlaced = this.playerBoard.placeShip(
               ship,
               pickedOrientation,
@@ -26,8 +24,6 @@ export function realPlayer() {
           }
         } else if (pickedOrientation === "vertical") {
           while (hasPlaced === false) {
-            console.log(`realPlayer->Hasplaced = ${hasPlaced}`);
-
             hasPlaced = this.playerBoard.placeShip(
               ship,
               pickedOrientation,
