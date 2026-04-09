@@ -39,6 +39,19 @@ nav {
 main {
   display: grid;
   place-content: center;
+  align-items: center;
+  vertical-align: middle;
+  .main__info > div,
+  .main__info2 > div {
+    display: grid;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .info__newgame {
+    display: grid;
+    grid-template: 1fr /1fr 1fr;
+    gap: 0.25rem;
+  }
   .main__info {
     display: grid;
     grid-template: 1fr/ 1fr 1fr 1fr;
@@ -129,4 +142,14 @@ footer {
   background-color: rgba(0, 0, 0, 0);
   min-height: 100px;
   width: 100%;
+}
+
+/* -- */
+button {
+  background-color: transparent;
+  padding: 0.25rem 0.25rem;
+  border: 2px solid rgba(150, 150, 150, 0.521);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 700;
 }
