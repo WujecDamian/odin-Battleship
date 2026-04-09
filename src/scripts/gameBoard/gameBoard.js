@@ -41,7 +41,9 @@ export function gameBoard() {
         maxX = 10 - ship.lengthShip;
         if (x <= maxX) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            if (this.board[y][x + i] !== "") {
+            if (this.board[y][x + i][0] === "o") {
+              console.log(`${this.board[y][x + i][0]} ISN'T CLEAR`);
+
               isClear = false;
             }
           }
@@ -49,13 +51,16 @@ export function gameBoard() {
             for (let i = 0; i < ship.lengthShip; i++) {
               this.board[y][x + i] = new Array("o", ship);
             }
+            isClear = true;
           }
         }
       } else if (orientation === "vertical") {
         minY = ship.lengthShip - 1;
         if (y >= minY) {
           for (let i = 0; i < ship.lengthShip; i++) {
-            if (this.board[y - 1][x] !== "") {
+            if (this.board[y - i][x][0] === "o") {
+              console.log(`${this.board[y - i][x][0]} ISN'T CLEAR`);
+
               isClear = false;
             }
           }
@@ -63,6 +68,7 @@ export function gameBoard() {
             for (let i = 0; i < ship.lengthShip; i++) {
               this.board[y - i][x] = new Array("o", ship);
             }
+            isClear = true;
           }
         }
       }
