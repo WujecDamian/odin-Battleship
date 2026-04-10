@@ -11,7 +11,7 @@ export function placePcShips(player) {
   fieldsWithShips.forEach((field) => {
     for (let i = 0; i < 100; i++) {
       if (squares[i].id === field) {
-        squares[i].innerHTML = "o";
+        squares[i].className = "square playerShip";
       }
     }
   });
