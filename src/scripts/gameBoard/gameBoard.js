@@ -4,7 +4,7 @@ export function gameBoard() {
   return {
     board: Array(10)
       .fill()
-      .map(() => Array(10).fill("")),
+      .map(() => Array(10).fill([""])),
     ships: new Array(
       shipObj("carrier", 5),
       shipObj("battleship", 4),
@@ -19,7 +19,6 @@ export function gameBoard() {
       let hasHit = false;
       //Determine whether attack hit a ship
       if (this.board[y][x][0] === "o") {
-        // t: => call hit function on correct ship [o]
         let ship = this.board[y][x][1];
         ship.hit();
         if (ship.getHits() === 17) {
@@ -27,7 +26,6 @@ export function gameBoard() {
         }
         hasHit = true;
       } else {
-        this.board[y][x] = new Array("x");
         this.missed++;
       }
       return hasHit;
@@ -79,7 +77,7 @@ export function gameBoard() {
       let board = this.board;
       for (let y = 0; y < 9; y++) {
         for (let x = 0; x < 9; x++) {
-          if (board[y][x] != "") {
+          if (board[y][x][0] !== "") {
             this.fieldsWithShips.push(`${y},${x}`);
           }
         }
