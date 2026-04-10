@@ -127,6 +127,10 @@ main {
           cursor: crosshair;
           border-radius: 0.75rem;
         }
+        [class*="square playerShip"] {
+          border: 1px solid rgba(255, 255, 255, 0.712);
+          background-color: rgba(88, 88, 88, 0.603);
+        }
       }
 
       /* !Create board in JS*/
