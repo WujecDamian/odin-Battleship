@@ -10,13 +10,9 @@ import { attackShip } from "./attackShip.js";
 let newGameBtn1 = document.querySelector(".newgame__btn1");
 let newGameBtn2 = document.querySelector(".newgame__btn2");
 let startGameBtn = document.querySelector(".startgame__btn");
-let reloadGameBtn = document.querySelector(".reloadgame__btn");
 let board1 = document.querySelector(".board1");
 let board2 = document.querySelector(".board2");
 
-reloadGameBtn.addEventListener("click", () => {
-  window.location.reload();
-});
 startGameBtn.addEventListener("click", () => {
   /* player 1 */
   let player1 = realPlayer();
