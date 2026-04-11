@@ -23,10 +23,5 @@ startGameBtn.addEventListener("click", () => {
   placeAiShips(player2);
   attackShip(player2, board2);
 
-  /*  
-  Turns function.
-    - human player starts
-    - turn changes on clicking square (of course if square is empty)
-  */
   playTurn();
 });
