@@ -1,4 +1,5 @@
 import { playTurn, getTurn } from "./playTurn.js";
+import { checkHasWon } from "./checkHasWon.js";
 
 export function attackShip(player, board) {
   board.addEventListener("click", (event) => {
@@ -12,6 +13,7 @@ export function attackShip(player, board) {
         if (target.innerHTML !== "o" && target.innerHTML !== "x") {
           if (attack) {
             target.innerHTML = "o";
+            checkHasWon(player);
             playTurn();
           }
           if (!attack) {
