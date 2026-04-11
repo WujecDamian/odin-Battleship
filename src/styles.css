@@ -113,6 +113,9 @@ main {
             minmax(25px, 3vw)
           );
         .square {
+          text-align: center;
+          color: white;
+          font-size: 1.8vw;
           min-height: fit-content;
           min-width: fit-content;
           border: 1px solid rgba(150, 150, 150, 0.521);
