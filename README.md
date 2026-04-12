@@ -4,9 +4,6 @@ A clean implementation of the classic **Battleship** game built as part of [The 
 
 Play against a smart AI opponent on a 10×10 grid. Sink all your enemy's ships before they sink yours!
 
-![Battleship Preview](https://via.placeholder.com/800x450/1e3a8a/ffffff?text=Battleship+Game+Preview)  
-*(Add a screenshot here once you have one)*
-
 ## Features
 
 - **Classic Battleship rules** — 5 ships of different sizes
